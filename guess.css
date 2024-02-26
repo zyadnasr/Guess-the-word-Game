@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #f44336;
+}
+
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eee;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    margin: 0 0 50px;
+    background-color: #fff;
+}
+
+.guess-game {
+    text-align: center;
+    width: 1000px;
+    margin: 20px auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    .game-area {
+        .inputs {
+            > div {
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                span {
+                    font-size: 30px;
+                    margin-right: 15px;
+                    font-weight: bold;
+                }
+            }
+            .disapled-inputs {
+                opacity: 0.5;
+                pointer-events: none;
+            }
+            input {
+                margin: 0 5px;
+                height: 60px;
+                width: 60px;
+                text-align: center;
+                font-size: 50px;
+                font-weight: bold;
+                caret-color: var(--primary-color);
+                border: none;
+                border-bottom: 3px solid #333;
+                background-color: #fff;
+                &:focus {
+                    outline-color: #ccc;
+                }
+                &.yes-in-place {
+                    background-color: #f89e13;
+                    border: #f89e13;
+                    color: #fff;
+                }
+                &.not-in-place {
+                    background-color: #18ba89;
+                    border: #18ba89;
+                    color: #fff;
+                }
+                &.no {
+                    background-color: #27303f;
+                    border: #27303f;
+                    color: #fff;
+                }
+            }
+        }
+        .control {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 500px;
+            margin: 30px auto;
+            gap: 10px;
+            .check {
+                background-color: var(--primary-color);
+                flex: 1;
+            }
+            .hint {
+                background-color: #009688;
+                width: fit-content;
+            }
+            button {
+                font-size: 25px;
+                padding: 15px 20px;
+                border-radius: 6px;
+                border: none;
+                color: #fff;
+                cursor: pointer;
+                font-weight: bold;
+            }
+            button:disabled {
+                opacity: 0.4;
+                background-color: #000;
+                cursor: no-drop;
+            }
+        }
+    }
+    .key-colors {
+        .key-color {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            background-color: white;
+            .key {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                margin-right: 10px;
+                &.in-place {
+                    background-color: #f89e13;
+                }
+                &.not-in-place {
+                    background-color: #18ba89;
+                }
+                &.no {
+                    background-color: #27303f;
+                }
+            }
+            .key-text {
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+    }
+}
+.message {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    span {
+        display: block;
+        font-weight: bold;
+        font-size: 50px;
+        text-transform: capitalize;
+        color: var(--primary-color);
+        margin-top: 10px;
+    }
+    p {
+        margin-top: 15px;
+    }
+}
+footer{
+    width: 100%;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+}
